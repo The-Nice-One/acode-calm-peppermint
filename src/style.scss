@@ -1,0 +1,226 @@
+@use "sass:map";
+
+$theme-colors: (
+    "background": #0b0f12,
+    "foreground": #ebf0f4,
+    "cursor": #ebf0f4,
+
+    "gutter": #707a82,
+    "gutter-active": #89959f,
+    "print-margin": #31393f,
+    "selection": #304c61,
+    "active-line": rgba(48, 76, 97, 0.8),
+    "keyword": #73ffb0,
+    "operator": #ffe873,
+    "storage": #73ffb0,
+    "paren": #ebf0f4,
+    "bracket": #ebf0f4,
+    "other-constant": #ff73a2,
+    "identifier": #73c5ff,
+    "function": #c773ff,
+    "function-name": #ff73a2,
+    "class": #73ffb0,
+    "string": #ffa773,
+    "comment": #89959f,
+    "constant": #ebf0f4,
+    "type": #73c5ff,
+    "attribute": #73c5ff,
+    "parameter": #73ffb0,
+    "punctuation": #ffa773,
+    "tag-name": #73c5ff,
+    "numeric": #73ffb0,
+    "regex": #ff73a2,
+    "variable-builtin": #ebf0f4,
+);
+
+.ace-calm-peppermint {
+    color: map.get($theme-colors, "foreground"); // default color
+    background-color: map.get(
+        $theme-colors,
+        "background"
+    ); // background-color of editor container
+    // left side line number area
+    .ace_gutter {
+        color: map.get($theme-colors, "gutter"); // for line number color
+    }
+    // Active line for left side Line number area
+    .ace_gutter-active-line {
+        color: map.get(
+            $theme-colors,
+            "gutter-active"
+        ); // for line number color active line
+    }
+    // vertical Line after 80 character if enabled
+    .ace_print-margin {
+        width: 1px;
+        background: map.get($theme-colors, "print-margin");
+    }
+    // Cursor color
+    .ace_cursor {
+        color: map.get($theme-colors, "cursor");
+    }
+    // selection
+    .ace_marker-layer .ace_selection {
+        background: map.get($theme-colors, "selection");
+        border-radius: 0;
+    }
+
+    // Multiple cursor's active selection
+    .ace_multiselect .ace_selection.ace_start {
+        box-shadow: 0 0 3px #07080a;
+    }
+    .ace_marker-layer .ace_step {
+        background: #ff0000;
+    }
+
+    // highlights Matching brackets (Only change border color)
+    .ace_marker-layer .ace_bracket {
+        margin: -1px 0 0 -1px;
+        border: 1px solid map.get($theme-colors, "bracket");
+    }
+    // editor container active line
+    .ace_marker-layer .ace_active-line {
+        border: 1px solid map.get($theme-colors, "active-line");
+        box-sizing: border-box;
+    }
+    // next match for the current selected word
+    // try a bit transparent color
+    .ace_marker-layer .ace_selected-word {
+        background-color: rgba(16, 203, 147, 0.3);
+    }
+    .ace_invisible {
+        color: #ff0000;
+    }
+    /**
+       * keywords
+       * for example if else
+       * ID in css
+       */
+    .hljs-keyword,
+    .ace_keyword {
+        color: map.get($theme-colors, "keyword");
+    }
+    // example =
+    .ace_keyword.ace_operator {
+        color: map.get($theme-colors, "operator");
+    }
+    .ace_constant.ace_language {
+        color: map.get($theme-colors, "constant");
+    }
+    // numbers
+    .ace_constant.ace_numeric {
+        color: map.get($theme-colors, "numeric");
+    }
+    .ace_constant.ace_character {
+        color: map.get($theme-colors, "string");
+    }
+    .ace_constant.ace_character.ace_escape {
+        color: map.get($theme-colors, "escape");
+    }
+    // excape in regex
+    .ace_constant.ace_other {
+        color: map.get($theme-colors, "other-constant");
+    }
+
+    // const abc = "hello"
+    // abc will have the color
+    .hljs-title,
+    .ace_identifier {
+        color: map.get($theme-colors, "identifier");
+    }
+    // url() attr() in css
+    .ace_support.ace_function {
+        color: map.get($theme-colors, "function");
+    }
+    // in js style, length etc
+    // in css auto, inset, inline-block etc
+    .ace_support.ace_constant {
+        color: map.get($theme-colors, "constant");
+    }
+
+    // window document Array Object  Math  Uint32Array isNaN
+    .ace_variable.ace_language {
+        color: map.get($theme-colors, "variable-builtin");
+    }
+
+    // in css display, transform, animation etc
+    .ace_support.ace_type {
+        color: map.get($theme-colors, "type");
+    }
+
+    // tag name in html <div>
+    .ace_meta.ace_tag {
+        color: map.get($theme-colors, "keyword");
+    }
+    // let const var also =>
+    .ace_storage,
+    .ace_storage.ace_type {
+        color: map.get($theme-colors, "storage");
+    }
+
+    .ace_invalid {
+        color: #ff0000;
+        background-color: #ff0000;
+    }
+    .ace_invalid.ace_deprecated {
+        color: #ff0000;
+        background-color: #ff0000;
+    }
+
+    // string
+    .ace_string {
+        color: map.get($theme-colors, "string");
+    }
+    // comment
+    .ace_comment {
+        color: map.get($theme-colors, "comment");
+    }
+    // .class name in css
+    .ace_variable {
+        color: map.get($theme-colors, "variable-builtin");
+    }
+    // anything without . or # in css
+    // e.g. body h1
+
+    .ace_constant {
+        color: map.get($theme-colors, "constant");
+    }
+
+    // function parameters (abc) =>
+    .hljs-params,
+    .ace_variable.ace_parameter {
+        color: map.get($theme-colors, "parameter");
+    }
+    // attribute name in html
+    .ace_entity.ace_other.ace_attribute-name {
+        color: map.get($theme-colors, "attribute");
+    }
+
+    // <> in html
+    .ace_xml-pe.ace_xml,
+    .ace_punctuation.ace_tag {
+        color: #ccc;
+    }
+    // html tag
+    .ace_tag-name.ace_tag,
+    .ace_entity.ace_name.ace_tag {
+        color: map.get($theme-colors, "tag-name");
+    }
+    .ace_entity.ace_name.ace_function {
+        color: map.get($theme-colors, "function-name");
+    }
+    .ace_paren {
+        color: map.get($theme-colors, "paren");
+    }
+    /**
+      * Don't change indent guide
+      */
+    .ace_indent-guide {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ09NrYAgMjP4PAAtGAwchHMyAAAAAAElFTkSuQmCC)
+            right repeat-y;
+    }
+    .ace_indent-guide-active {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQIW2PQ1dX9zzBz5sz/ABCcBFFentLlAAAAAElFTkSuQmCC)
+            right repeat-y;
+    }
+}

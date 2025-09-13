@@ -1,0 +1,14 @@
+{
+  "id": "acode.plugin.calm-peppermint-theme",
+  "name": "Calm Peppermint Theme",
+  "main": "dist/main.js",
+  "version": "0.0.1",
+  "readme": "readme.md",
+  "icon": "icon.png",
+  "files": [],
+  "author": {
+    "name": "The-Nice-One",
+    "email": "",
+    "github": "The-Nice-One"
+  }
+}
