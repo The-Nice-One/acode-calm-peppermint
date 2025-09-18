@@ -3,6 +3,8 @@
   "name": "Calm Peppermint Theme",
   "main": "dist/main.js",
   "version": "0.0.1",
+  "minVersionCode": 292,
+  "price": 0,
   "license": "Apache-2.0",
   "keywords": ["theme", "dark theme"],
   "readme": "readme.md",
