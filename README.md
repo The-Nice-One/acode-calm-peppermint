@@ -1,6 +1,6 @@
 # Acode Calm Peppermint
 
-A calming dark code-editor theme with a mint-green focus and a variety of complementing colors. This theme will also come with a light-mode varient in the future.
+A work-in-progress calming dark code-editor theme with a mint-green focus and a variety of complementing colors. This theme will also come with a light-mode varient in the future.
 
 # Color Map
 ```scss
