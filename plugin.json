@@ -1,5 +1,5 @@
 {
-  "id": "acode.plugin.calm-peppermint-theme",
+  "id": "acode.plugin.calm_peppermint_theme",
   "name": "Calm Peppermint Theme",
   "main": "dist/main.js",
   "version": "0.0.1",
